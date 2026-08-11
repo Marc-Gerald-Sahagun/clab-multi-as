@@ -1,0 +1,102 @@
+name: full01
+prefix: null
+mgmt:
+  network: clabs
+  ipv4-subnet: 172.30.30.0/24
+settings: null
+topology:
+  defaults:
+    env:
+      INTFTYPE: et
+  kinds:
+    arista_ceos: 
+      ceos:4.32.0F
+    linux:
+      ghcr.io/srl-labs/alpine:latest
+  nodes:
+    #AS1  
+    asbr1-1:
+      kind: arista_ceos
+      group: tier-4
+      startup-config: configs/asbr1-1.cfg
+    r1-1:
+      kind: arista_ceos
+      group: tier-3
+      startup-config: configs/r1-1.cfg
+    r1-2:
+      kind: arista_ceos
+      group: tier-3
+      startup-config: configs/r1-2.cfg
+    sw1-1:
+      kind: arista_ceos
+      group: tier-2
+      startup-config: configs/sw1-1.cfg
+    sw1-2:
+      kind: arista_ceos
+      group: tier-2
+      startup-config: configs/sw1-2.cfg
+    sw1-3:
+      kind: arista_ceos
+      group: tier-2
+      startup-config: configs/sw1-3.cfg
+    host1-1:
+      kind: linux
+      group: tier-1
+    host1-2:
+      kind: linux
+      group: tier-1
+    host1-3:
+      kind: linux
+      group: tier-1
+
+    #AS2
+    asbr2-1:
+      kind: arista_ceos
+      group: tier-4
+      startup-config: configs/asbr2-1.cfg
+    r2-1:
+      kind: arista_ceos
+      group: tier-3
+      startup-config: configs/r2-1.cfg
+    r2-2:
+      kind: arista_ceos
+      group: tier-3
+      startup-config: configs/r2-2.cfg
+    sw2-1:
+      kind: arista_ceos
+      group: tier-2
+      startup-config: configs/sw2-1.cfg
+    sw2-2:
+      kind: arista_ceos
+      group: tier-2
+      startup-config: configs/sw2-2.cfg
+    sw2-3:
+      kind: arista_ceos
+      group: tier-2
+      startup-config: configs/sw2-3.cfg
+    host2-1:
+      kind: linux
+      group: tier-1
+    host2-2:
+      kind: linux
+      group: tier-1
+    host2-3:
+      kind: linux
+      group: tier-1
+
+  links:
+    # Link between the AS
+    endpoints: [ "asbr1-1:et1", "asbr2-1:et1" ]
+    # Link between ASBR1 and the VRRP routers
+    endpoints: [ "asbr1-1:et2", "r1-1:et1" ]
+    endpoints: [ "asbr1-1:et3", "r1-2:et1" ]
+    # Link between AS1 routers
+    endpoints: [ "r1-1:et2", "r1-2:et2" ]
+    # Link between VRRP routers and switches
+    endpoints: [ "r1:et3", "sw1-1:et1" ]
+    endpoints: [ "r1:et4", "sw1-2:et2" ]
+    endpoints: [ "r2:et3", "sw1-2:et1" ]
+    endpoints: [ "r2:et4", "sw1-1:et2" ]
+    # Links between the switches
+    
+        

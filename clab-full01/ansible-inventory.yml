@@ -1,0 +1,51 @@
+all:
+  vars:
+    # The generated inventory is assumed to be used from the clab host.
+    # Hence no http proxy should be used. Therefore we make sure the http
+    # module does not attempt using any global http proxy.
+    ansible_httpapi_use_proxy: false
+  children:
+    arista_ceos:
+      vars:
+        # ansible_connection: set ansible_connection variable if required
+        ansible_user: admin
+        ansible_password: admin
+      hosts:
+        clab-full01-asbr1-1:
+          ansible_host: 172.30.30.7
+        clab-full01-asbr2-1:
+          ansible_host: 172.30.30.13
+        clab-full01-r1-1:
+          ansible_host: 172.30.30.5
+        clab-full01-r1-2:
+          ansible_host: 172.30.30.8
+        clab-full01-r2-1:
+          ansible_host: 172.30.30.19
+        clab-full01-r2-2:
+          ansible_host: 172.30.30.12
+        clab-full01-sw1-1:
+          ansible_host: 172.30.30.11
+        clab-full01-sw1-2:
+          ansible_host: 172.30.30.9
+        clab-full01-sw1-3:
+          ansible_host: 172.30.30.15
+        clab-full01-sw2-1:
+          ansible_host: 172.30.30.6
+        clab-full01-sw2-2:
+          ansible_host: 172.30.30.17
+        clab-full01-sw2-3:
+          ansible_host: 172.30.30.14
+    linux:
+      hosts:
+        clab-full01-host1-1:
+          ansible_host: 172.30.30.10
+        clab-full01-host1-2:
+          ansible_host: 172.30.30.18
+        clab-full01-host1-3:
+          ansible_host: 172.30.30.16
+        clab-full01-host2-1:
+          ansible_host: 172.30.30.2
+        clab-full01-host2-2:
+          ansible_host: 172.30.30.4
+        clab-full01-host2-3:
+          ansible_host: 172.30.30.3

@@ -1,0 +1,91 @@
+---
+asbr1-1:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.30.30.7
+asbr2-1:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.30.30.13
+r1-1:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.30.30.5
+r1-2:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.30.30.8
+r2-1:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.30.30.19
+r2-2:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.30.30.12
+sw1-1:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.30.30.11
+sw1-2:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.30.30.9
+sw1-3:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.30.30.15
+sw2-1:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.30.30.6
+sw2-2:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.30.30.17
+sw2-3:
+    username: admin
+    password: admin
+    platform: arista_ceos
+    hostname: 172.30.30.14
+host1-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.30.30.10
+host1-2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.30.30.18
+host1-3:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.30.30.16
+host2-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.30.30.2
+host2-2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.30.30.4
+host2-3:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.30.30.3

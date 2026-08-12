@@ -10,9 +10,9 @@ topology:
       INTFTYPE: et
   kinds:
     arista_ceos: 
-      ceos:4.32.0F
+      image: ceos:4.32.0F
     linux:
-      ghcr.io/srl-labs/alpine:latest
+      image: ghcr.io/srl-labs/alpine:latest
   nodes:
     #AS1  
     asbr1-1:
@@ -86,17 +86,46 @@ topology:
 
   links:
     # Link between the AS
-    endpoints: [ "asbr1-1:et1", "asbr2-1:et1" ]
-    # Link between ASBR1 and the VRRP routers
-    endpoints: [ "asbr1-1:et2", "r1-1:et1" ]
-    endpoints: [ "asbr1-1:et3", "r1-2:et1" ]
-    # Link between AS1 routers
-    endpoints: [ "r1-1:et2", "r1-2:et2" ]
-    # Link between VRRP routers and switches
-    endpoints: [ "r1:et3", "sw1-1:et1" ]
-    endpoints: [ "r1:et4", "sw1-2:et2" ]
-    endpoints: [ "r2:et3", "sw1-2:et1" ]
-    endpoints: [ "r2:et4", "sw1-1:et2" ]
-    # Links between the switches
+    - endpoints: [ "asbr1-1:et1", "asbr2-1:et1" ]
     
+    ##  AS1 ##
+    # Link between ASBR1 and the VRRP routers
+    - endpoints: [ "asbr1-1:et2", "r1-1:et1" ]
+    - endpoints: [ "asbr1-1:et3", "r1-2:et1" ]
+    # Link between AS1 routers
+    - endpoints: [ "r1-1:et2", "r1-2:et2" ]
+    # Link between VRRP routers and switches
+    - endpoints: [ "r1-1:et4", "sw1-1:et1" ]
+    - endpoints: [ "r1-1:et3", "sw1-2:et2" ]
+    - endpoints: [ "r1-2:et4", "sw1-2:et1" ]
+    - endpoints: [ "r1-2:et3", "sw1-1:et2" ]
+    # Links between the switches
+    - endpoints: [ "sw1-1:et3", "sw1-2:et3" ]
+    - endpoints: [ "sw1-1:et4", "sw1-3:et1" ]
+    - endpoints: [ "sw1-2:et4", "sw1-3:et2" ] 
+    # Links between the switches and hosts
+    - endpoints: [ "sw1-1:et5", "host1-1:eth1" ]
+    - endpoints: [ "sw1-2:et5", "host1-2:eth1" ]
+    - endpoints: [ "sw1-3:et3", "host1-3:eth1" ] 
+
+    ## AS2 ##
+    # Link between ASBR1 and the VRRP routers
+    - endpoints: [ "asbr2-1:et2", "r2-1:et1" ]
+    - endpoints: [ "asbr2-1:et3", "r2-2:et1" ]
+    # Link between AS1 routers
+    - endpoints: [ "r2-1:et2", "r2-2:et2" ]
+    # Link between VRRP routers and switches
+    - endpoints: [ "r2-1:et4", "sw2-1:et1" ]
+    - endpoints: [ "r2-1:et3", "sw2-2:et2" ]
+    - endpoints: [ "r2-2:et4", "sw2-2:et1" ]
+    - endpoints: [ "r2-2:et3", "sw2-1:et2" ]
+    # Links between the switches
+    - endpoints: [ "sw2-1:et3", "sw2-2:et3" ]
+    - endpoints: [ "sw2-1:et4", "sw2-3:et1" ]
+    - endpoints: [ "sw2-2:et4", "sw2-3:et2" ] 
+    # Links between the switches and hosts
+    - endpoints: [ "sw2-1:et5", "host2-1:eth1" ]
+    - endpoints: [ "sw2-2:et5", "host2-2:eth1" ]
+    - endpoints: [ "sw2-3:et3", "host2-3:eth1" ] 
+       
         

@@ -1,4 +1,4 @@
-! Startup-config last modified at Thu Aug 13 02:04:37 2026 by root
+! Startup-config last modified at Thu Aug 13 05:08:30 2026 by root
 ! device: sw2-2 (cEOSLab, EOS-4.32.0F-36401836.4320F (engineering build))
 !
 no aaa root
@@ -23,10 +23,8 @@ interface Ethernet3
 !
 interface Ethernet4
 !
-interface Ethernet5
-!
 interface Management0
-   ip address 172.30.30.9/24
+   ip address 172.30.30.6/24
 !
 no ip routing
 !

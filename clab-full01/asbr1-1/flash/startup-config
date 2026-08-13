@@ -1,20 +1,20 @@
-! Startup-config last modified at Thu Aug 13 02:04:32 2026 by root
+! Startup-config last modified at Thu Aug 13 05:10:23 2026 by root
 ! device: asbr1-1 (cEOSLab, EOS-4.32.0F-36401836.4320F (engineering build))
 !
 no aaa root
 !
 dhcp server
-   subnet 172.0.1.0/29
-      range 172.0.1.2 172.0.1.6
+   subnet 172.16.1.0/29
+      range 172.16.1.2 172.16.1.6
       default-gateway 172.0.1.1
    !
-   subnet 172.0.1.16/29
-      range 172.0.1.18 172.0.1.22
+   subnet 172.16.1.16/29
+      range 172.16.1.18 172.16.1.22
       default-gateway 172.0.1.17
    !
-   subnet 172.0.1.8/29
-      range 172.0.1.10 172.0.1.14
-      default-gateway 172.0.1.9
+   subnet 172.16.1.8/29
+      range 172.16.1.10 172.16.1.14
+      default-gateway 172.16.1.9
 !
 transceiver qsfp default-mode 4x10G
 !
@@ -31,12 +31,16 @@ system l1
 interface Ethernet1
 !
 interface Ethernet2
+   no switchport
+   ip address 172.16.1.57/30
 !
 interface Ethernet3
+   no switchport
+   ip address 172.16.1.61/30
 !
 interface Management0
-   ip address 172.30.30.7/24
+   ip address 172.30.30.15/24
 !
-no ip routing
+ip routing
 !
 end

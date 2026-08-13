@@ -1,4 +1,4 @@
-! Startup-config last modified at Thu Aug 13 02:04:18 2026 by root
+! Startup-config last modified at Thu Aug 13 06:25:53 2026 by root
 ! device: r1-2 (cEOSLab, EOS-4.32.0F-36401836.4320F (engineering build))
 !
 no aaa root
@@ -7,7 +7,7 @@ transceiver qsfp default-mode 4x10G
 !
 service routing protocols model multi-agent
 !
-hostname r1-2.cfg
+hostname r1-2
 !
 spanning-tree mode mstp
 !
@@ -16,16 +16,37 @@ system l1
    unsupported error-correction action error
 !
 interface Ethernet1
+   no switchport
+   ip address 172.16.1.62/30
 !
 interface Ethernet2
+   no switchport
+   ip address 172.16.1.66/30
 !
 interface Ethernet3
+   no switchport
 !
-interface Ethernet4
+interface Ethernet3.10
+   encapsulation dot1q vlan 10
+   ip address 172.16.1.3/29
+   vrrp 1 priority-level 90
+   vrrp 1 ipv4 172.16.1.1
+!
+interface Ethernet3.20
+   encapsulation dot1q vlan 20
+   ip address 172.16.1.11/29
+   vrrp 1 priority-level 90
+   vrrp 1 ipv4 172.16.1.9
+!
+interface Ethernet3.30
+   encapsulation dot1q vlan 30
+   ip address 172.16.1.19/29
+   vrrp 1 priority-level 90
+   vrrp 1 ipv4 172.16.1.17
 !
 interface Management0
-   ip address 172.30.30.5/24
+   ip address 172.30.30.8/24
 !
-no ip routing
+ip routing
 !
 end

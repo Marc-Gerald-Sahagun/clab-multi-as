@@ -1,0 +1,29 @@
+! Startup-config last modified at Thu Aug 13 02:04:30 2026 by root
+! device: asbr2-1 (cEOSLab, EOS-4.32.0F-36401836.4320F (engineering build))
+!
+no aaa root
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model multi-agent
+!
+hostname asbr2-1
+!
+spanning-tree mode mstp
+!
+system l1
+   unsupported speed action error
+   unsupported error-correction action error
+!
+interface Ethernet1
+!
+interface Ethernet2
+!
+interface Ethernet3
+!
+interface Management0
+   ip address 172.30.30.10/24
+!
+no ip routing
+!
+end

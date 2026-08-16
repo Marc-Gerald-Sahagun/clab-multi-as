@@ -1,4 +1,4 @@
-! Startup-config last modified at Sun Aug 16 02:04:10 2026 by root
+! Startup-config last modified at Sun Aug 16 04:41:20 2026 by root
 ! device: asbr1-1 (cEOSLab, EOS-4.32.0F-36401836.4320F (engineering build))
 !
 no aaa root
@@ -31,6 +31,8 @@ system l1
    unsupported error-correction action error
 !
 interface Ethernet1
+   no switchport
+   ip address 10.255.255.1/30
 !
 interface Ethernet2
    no switchport
@@ -48,7 +50,13 @@ interface Management0
 !
 ip routing
 !
+router bgp 65001
+   router-id 1.1.1.1
+   neighbor 10.255.255.2 remote-as 65002
+   network 172.16.1.0/24
+!
 router ospf 1
+   router-id 3.3.3.3
    max-lsa 12000
 !
 end

@@ -19,10 +19,16 @@ all:
               ansible_host: 172.30.30.102
             r1-2:
               ansible_host: 172.30.30.103
+            r2-1:
+              ansible_host: 172.30.30.111
+            r2-2:
+              ansible_host: 172.30.30.112              
         border:
           hosts:
             asbr1-1:
               ansible_host: 172.30.30.101
+            asbr2-1:
+              ansible_host: 172.30.30.110
         access:
           hosts:
             sw1-1:
@@ -31,3 +37,9 @@ all:
               ansible_host: 172.30.30.105
             sw1-3:
               ansible_host: 172.30.30.106
+            sw2-1:
+              ansible_host: 172.30.30.113
+            sw2-2:
+              ansible_host: 172.30.30.114
+            sw2-3:
+              ansible_host: 172.30.30.115

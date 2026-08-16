@@ -1,0 +1,12 @@
+- name: Backup running configs to local configs directory
+  hosts: network
+  gather_facts: false
+  tasks:
+    - name: Fetch running config
+      arista.eos.eos_config:
+        backup: true
+        backup_options:
+          filename: "{{ inventory_hostname }}.cfg"
+          dir_path: "../configs/"
+      become: true
+      become_method: enable

@@ -1,0 +1,33 @@
+all:
+  children:
+    network:
+      vars:
+        ansible_user: admin
+        ansible_password: admin
+        ansible_network_os: arista.eos.eos
+        ansible_connection: ansible.netcommon.network_cli
+        ansible_ssh_pass: admin
+        ansible_ssh_common_args: '-o PreferredAuthentications=password -o PubkeyAuthentication=no'
+        ansible_network_cli_ssh_type: paramiko
+        ansible_become: yes
+        ansible_become_method: enable
+        ansible_become_password: admin
+      children:
+        interior:
+          hosts:
+            r1-1:
+              ansible_host: 172.30.30.7
+            r1-2:
+              ansible_host: 172.30.30.8
+        border:
+          hosts:
+            asbr1-1:
+              ansible_host: 172.30.30.6
+        access:
+          hosts:
+            sw1-1:
+              ansible_host: 172.30.30.9
+            sw1-2:
+              ansible_host: 172.30.30.4
+            sw1-3:
+              ansible_host: 172.30.30.5

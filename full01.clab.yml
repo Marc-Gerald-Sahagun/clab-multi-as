@@ -42,13 +42,20 @@ topology:
     host1-1:
       kind: linux
       group: tier-1
+      exec:
+        - udhcpc -i eth1 -q -t 20 -A 5
+        - ip route del default via 172.30.30.1
     host1-2:
       kind: linux
       group: tier-1
+      exec:
+        - udhcpc -i eth1 -q -t 20 -A 5
+        - ip route del default via 172.30.30.1
     host1-3:
       kind: linux
       group: tier-1
-
+        - udhcpc -i eth1 -q -t 20 -A 5
+        - ip route del default via 172.30.30.1
     #AS2
     asbr2-1:
       kind: arista_ceos
@@ -93,7 +100,7 @@ topology:
     - endpoints: [ "asbr1-1:et2", "r1-1:et1" ]
     - endpoints: [ "asbr1-1:et3", "r1-2:et1" ]
     # Link between AS1 routers
-    - endpoints: [ "r1-1:et2", "r1-2:et2" ]
+    #- endpoints: [ "r1-1:et2", "r1-2:et2" ]
     # Link between VRRP routers and switches
     - endpoints: [ "r1-1:et3", "sw1-1:et1" ]
     - endpoints: [ "r1-2:et3", "sw1-2:et1" ]
@@ -110,8 +117,8 @@ topology:
     # Link between ASBR1 and the VRRP routers
     - endpoints: [ "asbr2-1:et2", "r2-1:et1" ]
     - endpoints: [ "asbr2-1:et3", "r2-2:et1" ]
-    # Link between AS1 routers
-    - endpoints: [ "r2-1:et2", "r2-2:et2" ]
+    # Link between AS2 routers
+    #- endpoints: [ "r2-1:et2", "r2-2:et2" ]
     # Link between VRRP routers and switches
     - endpoints: [ "r2-1:et3", "sw2-1:et1" ]
     - endpoints: [ "r2-2:et3", "sw2-2:et1" ]

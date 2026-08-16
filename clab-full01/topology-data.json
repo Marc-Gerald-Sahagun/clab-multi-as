@@ -6,7 +6,7 @@
       "prefix": "clab",
       "mgmt": {
         "network": "clabs",
-        "bridge": "br-3e88ed5a25b0",
+        "bridge": "br-6355192e91c0",
         "ipv4-subnet": "172.30.30.0/24",
         "ipv4-gw": "172.30.30.1",
         "external-access": true
@@ -26,15 +26,15 @@
       "image": "ceos:4.32.0F",
       "mgmt-net": "",
       "mgmt-intf": "Management0",
-      "mgmt-ipv4-address": "172.30.30.15",
+      "mgmt-ipv4-address": "172.30.30.5",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:99:5a:b9",
+      "mac-address": "00:1c:73:6c:48:04",
       "labels": {
         "clab-git-branch": "master",
-        "clab-git-hash": "2b5616f",
-        "clab-mgmt-net-bridge": "br-3e88ed5a25b0",
+        "clab-git-hash": "d6e6829",
+        "clab-mgmt-net-bridge": "br-6355192e91c0",
         "clab-node-group": "tier-4",
         "clab-node-kind": "arista_ceos",
         "clab-node-lab-dir": "/home/homelab/clab/labs/full01/clab-full01/asbr1-1",
@@ -59,15 +59,15 @@
       "image": "ceos:4.32.0F",
       "mgmt-net": "",
       "mgmt-intf": "Management0",
-      "mgmt-ipv4-address": "172.30.30.10",
+      "mgmt-ipv4-address": "172.30.30.12",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:c1:a6:1b",
+      "mac-address": "00:1c:73:19:19:98",
       "labels": {
         "clab-git-branch": "master",
-        "clab-git-hash": "2b5616f",
-        "clab-mgmt-net-bridge": "br-3e88ed5a25b0",
+        "clab-git-hash": "d6e6829",
+        "clab-mgmt-net-bridge": "br-6355192e91c0",
         "clab-node-group": "tier-4",
         "clab-node-kind": "arista_ceos",
         "clab-node-lab-dir": "/home/homelab/clab/labs/full01/clab-full01/asbr2-1",
@@ -92,15 +92,15 @@
       "image": "ghcr.io/srl-labs/alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.30.30.2",
+      "mgmt-ipv4-address": "172.30.30.3",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
         "clab-git-branch": "master",
-        "clab-git-hash": "2b5616f",
-        "clab-mgmt-net-bridge": "br-3e88ed5a25b0",
+        "clab-git-hash": "d6e6829",
+        "clab-mgmt-net-bridge": "br-6355192e91c0",
         "clab-node-group": "tier-1",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/homelab/clab/labs/full01/clab-full01/host1-1",
@@ -143,15 +143,15 @@
       "image": "ghcr.io/srl-labs/alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.30.30.13",
+      "mgmt-ipv4-address": "172.30.30.18",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
         "clab-git-branch": "master",
-        "clab-git-hash": "2b5616f",
-        "clab-mgmt-net-bridge": "br-3e88ed5a25b0",
+        "clab-git-hash": "d6e6829",
+        "clab-mgmt-net-bridge": "br-6355192e91c0",
         "clab-node-group": "tier-1",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/homelab/clab/labs/full01/clab-full01/host1-2",
@@ -166,12 +166,6 @@
         {
           "host-ip": "",
           "host-port": 0,
-          "port": 80,
-          "protocol": "tcp"
-        },
-        {
-          "host-ip": "",
-          "host-port": 0,
           "port": 22,
           "protocol": "tcp"
         },
@@ -179,6 +173,12 @@
           "host-ip": "",
           "host-port": 0,
           "port": 443,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 80,
           "protocol": "tcp"
         }
       ]
@@ -188,22 +188,22 @@
       "shortname": "host1-3",
       "longname": "clab-full01-host1-3",
       "fqdn": "host1-3.full01.io",
-      "group": "tier-1",
+      "group": "tier-1 - udhcpc -i eth1 -q -t 20 -A 5 - ip route del default via 172.30.30.1",
       "labdir": "/home/homelab/clab/labs/full01/clab-full01/host1-3",
       "kind": "linux",
       "image": "ghcr.io/srl-labs/alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.30.30.11",
+      "mgmt-ipv4-address": "172.30.30.4",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
         "clab-git-branch": "master",
-        "clab-git-hash": "2b5616f",
-        "clab-mgmt-net-bridge": "br-3e88ed5a25b0",
-        "clab-node-group": "tier-1",
+        "clab-git-hash": "d6e6829",
+        "clab-mgmt-net-bridge": "br-6355192e91c0",
+        "clab-node-group": "tier-1 - udhcpc -i eth1 -q -t 20 -A 5 - ip route del default via 172.30.30.1",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/homelab/clab/labs/full01/clab-full01/host1-3",
         "clab-node-longname": "clab-full01-host1-3",
@@ -245,15 +245,15 @@
       "image": "ghcr.io/srl-labs/alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.30.30.3",
+      "mgmt-ipv4-address": "172.30.30.10",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
         "clab-git-branch": "master",
-        "clab-git-hash": "2b5616f",
-        "clab-mgmt-net-bridge": "br-3e88ed5a25b0",
+        "clab-git-hash": "d6e6829",
+        "clab-mgmt-net-bridge": "br-6355192e91c0",
         "clab-node-group": "tier-1",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/homelab/clab/labs/full01/clab-full01/host2-1",
@@ -296,15 +296,15 @@
       "image": "ghcr.io/srl-labs/alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.30.30.18",
+      "mgmt-ipv4-address": "172.30.30.11",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
         "clab-git-branch": "master",
-        "clab-git-hash": "2b5616f",
-        "clab-mgmt-net-bridge": "br-3e88ed5a25b0",
+        "clab-git-hash": "d6e6829",
+        "clab-mgmt-net-bridge": "br-6355192e91c0",
         "clab-node-group": "tier-1",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/homelab/clab/labs/full01/clab-full01/host2-2",
@@ -347,15 +347,15 @@
       "image": "ghcr.io/srl-labs/alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.30.30.19",
+      "mgmt-ipv4-address": "172.30.30.2",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
         "clab-git-branch": "master",
-        "clab-git-hash": "2b5616f",
-        "clab-mgmt-net-bridge": "br-3e88ed5a25b0",
+        "clab-git-hash": "d6e6829",
+        "clab-mgmt-net-bridge": "br-6355192e91c0",
         "clab-node-group": "tier-1",
         "clab-node-kind": "linux",
         "clab-node-lab-dir": "/home/homelab/clab/labs/full01/clab-full01/host2-3",
@@ -398,15 +398,15 @@
       "image": "ceos:4.32.0F",
       "mgmt-net": "",
       "mgmt-intf": "Management0",
-      "mgmt-ipv4-address": "172.30.30.14",
+      "mgmt-ipv4-address": "172.30.30.15",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:f5:cf:82",
+      "mac-address": "00:1c:73:99:d8:91",
       "labels": {
         "clab-git-branch": "master",
-        "clab-git-hash": "2b5616f",
-        "clab-mgmt-net-bridge": "br-3e88ed5a25b0",
+        "clab-git-hash": "d6e6829",
+        "clab-mgmt-net-bridge": "br-6355192e91c0",
         "clab-node-group": "tier-3",
         "clab-node-kind": "arista_ceos",
         "clab-node-lab-dir": "/home/homelab/clab/labs/full01/clab-full01/r1-1",
@@ -431,15 +431,15 @@
       "image": "ceos:4.32.0F",
       "mgmt-net": "",
       "mgmt-intf": "Management0",
-      "mgmt-ipv4-address": "172.30.30.8",
+      "mgmt-ipv4-address": "172.30.30.17",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:96:b8:b7",
+      "mac-address": "00:1c:73:17:92:88",
       "labels": {
         "clab-git-branch": "master",
-        "clab-git-hash": "2b5616f",
-        "clab-mgmt-net-bridge": "br-3e88ed5a25b0",
+        "clab-git-hash": "d6e6829",
+        "clab-mgmt-net-bridge": "br-6355192e91c0",
         "clab-node-group": "tier-3",
         "clab-node-kind": "arista_ceos",
         "clab-node-lab-dir": "/home/homelab/clab/labs/full01/clab-full01/r1-2",
@@ -464,15 +464,15 @@
       "image": "ceos:4.32.0F",
       "mgmt-net": "",
       "mgmt-intf": "Management0",
-      "mgmt-ipv4-address": "172.30.30.9",
+      "mgmt-ipv4-address": "172.30.30.19",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:b9:18:14",
+      "mac-address": "00:1c:73:32:ea:c1",
       "labels": {
         "clab-git-branch": "master",
-        "clab-git-hash": "2b5616f",
-        "clab-mgmt-net-bridge": "br-3e88ed5a25b0",
+        "clab-git-hash": "d6e6829",
+        "clab-mgmt-net-bridge": "br-6355192e91c0",
         "clab-node-group": "tier-3",
         "clab-node-kind": "arista_ceos",
         "clab-node-lab-dir": "/home/homelab/clab/labs/full01/clab-full01/r2-1",
@@ -497,15 +497,15 @@
       "image": "ceos:4.32.0F",
       "mgmt-net": "",
       "mgmt-intf": "Management0",
-      "mgmt-ipv4-address": "172.30.30.7",
+      "mgmt-ipv4-address": "172.30.30.16",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:00:a5:0f",
+      "mac-address": "00:1c:73:6b:64:cc",
       "labels": {
         "clab-git-branch": "master",
-        "clab-git-hash": "2b5616f",
-        "clab-mgmt-net-bridge": "br-3e88ed5a25b0",
+        "clab-git-hash": "d6e6829",
+        "clab-mgmt-net-bridge": "br-6355192e91c0",
         "clab-node-group": "tier-3",
         "clab-node-kind": "arista_ceos",
         "clab-node-lab-dir": "/home/homelab/clab/labs/full01/clab-full01/r2-2",
@@ -530,15 +530,15 @@
       "image": "ceos:4.32.0F",
       "mgmt-net": "",
       "mgmt-intf": "Management0",
-      "mgmt-ipv4-address": "172.30.30.5",
+      "mgmt-ipv4-address": "172.30.30.13",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:27:30:a8",
+      "mac-address": "00:1c:73:5c:a9:ff",
       "labels": {
         "clab-git-branch": "master",
-        "clab-git-hash": "2b5616f",
-        "clab-mgmt-net-bridge": "br-3e88ed5a25b0",
+        "clab-git-hash": "d6e6829",
+        "clab-mgmt-net-bridge": "br-6355192e91c0",
         "clab-node-group": "tier-2",
         "clab-node-kind": "arista_ceos",
         "clab-node-lab-dir": "/home/homelab/clab/labs/full01/clab-full01/sw1-1",
@@ -563,15 +563,15 @@
       "image": "ceos:4.32.0F",
       "mgmt-net": "",
       "mgmt-intf": "Management0",
-      "mgmt-ipv4-address": "172.30.30.12",
+      "mgmt-ipv4-address": "172.30.30.7",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:9e:04:91",
+      "mac-address": "00:1c:73:07:21:35",
       "labels": {
         "clab-git-branch": "master",
-        "clab-git-hash": "2b5616f",
-        "clab-mgmt-net-bridge": "br-3e88ed5a25b0",
+        "clab-git-hash": "d6e6829",
+        "clab-mgmt-net-bridge": "br-6355192e91c0",
         "clab-node-group": "tier-2",
         "clab-node-kind": "arista_ceos",
         "clab-node-lab-dir": "/home/homelab/clab/labs/full01/clab-full01/sw1-2",
@@ -596,15 +596,15 @@
       "image": "ceos:4.32.0F",
       "mgmt-net": "",
       "mgmt-intf": "Management0",
-      "mgmt-ipv4-address": "172.30.30.4",
+      "mgmt-ipv4-address": "172.30.30.8",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:f0:fe:0a",
+      "mac-address": "00:1c:73:56:b9:a5",
       "labels": {
         "clab-git-branch": "master",
-        "clab-git-hash": "2b5616f",
-        "clab-mgmt-net-bridge": "br-3e88ed5a25b0",
+        "clab-git-hash": "d6e6829",
+        "clab-mgmt-net-bridge": "br-6355192e91c0",
         "clab-node-group": "tier-2",
         "clab-node-kind": "arista_ceos",
         "clab-node-lab-dir": "/home/homelab/clab/labs/full01/clab-full01/sw1-3",
@@ -629,15 +629,15 @@
       "image": "ceos:4.32.0F",
       "mgmt-net": "",
       "mgmt-intf": "Management0",
-      "mgmt-ipv4-address": "172.30.30.16",
+      "mgmt-ipv4-address": "172.30.30.14",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:91:c5:e5",
+      "mac-address": "00:1c:73:42:24:3b",
       "labels": {
         "clab-git-branch": "master",
-        "clab-git-hash": "2b5616f",
-        "clab-mgmt-net-bridge": "br-3e88ed5a25b0",
+        "clab-git-hash": "d6e6829",
+        "clab-mgmt-net-bridge": "br-6355192e91c0",
         "clab-node-group": "tier-2",
         "clab-node-kind": "arista_ceos",
         "clab-node-lab-dir": "/home/homelab/clab/labs/full01/clab-full01/sw2-1",
@@ -662,15 +662,15 @@
       "image": "ceos:4.32.0F",
       "mgmt-net": "",
       "mgmt-intf": "Management0",
-      "mgmt-ipv4-address": "172.30.30.6",
+      "mgmt-ipv4-address": "172.30.30.9",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:cd:7e:e0",
+      "mac-address": "00:1c:73:72:c4:b9",
       "labels": {
         "clab-git-branch": "master",
-        "clab-git-hash": "2b5616f",
-        "clab-mgmt-net-bridge": "br-3e88ed5a25b0",
+        "clab-git-hash": "d6e6829",
+        "clab-mgmt-net-bridge": "br-6355192e91c0",
         "clab-node-group": "tier-2",
         "clab-node-kind": "arista_ceos",
         "clab-node-lab-dir": "/home/homelab/clab/labs/full01/clab-full01/sw2-2",
@@ -695,15 +695,15 @@
       "image": "ceos:4.32.0F",
       "mgmt-net": "",
       "mgmt-intf": "Management0",
-      "mgmt-ipv4-address": "172.30.30.17",
+      "mgmt-ipv4-address": "172.30.30.6",
       "mgmt-ipv4-prefix-length": 24,
       "mgmt-ipv6-address": "",
       "mgmt-ipv6-prefix-length": 0,
-      "mac-address": "00:1c:73:b7:b0:4a",
+      "mac-address": "00:1c:73:bc:a9:6e",
       "labels": {
         "clab-git-branch": "master",
-        "clab-git-hash": "2b5616f",
-        "clab-mgmt-net-bridge": "br-3e88ed5a25b0",
+        "clab-git-hash": "d6e6829",
+        "clab-mgmt-net-bridge": "br-6355192e91c0",
         "clab-node-group": "tier-2",
         "clab-node-kind": "arista_ceos",
         "clab-node-lab-dir": "/home/homelab/clab/labs/full01/clab-full01/sw2-3",
@@ -724,13 +724,13 @@
         "a": {
           "node": "asbr1-1",
           "interface": "et1",
-          "mac": "aa:c1:ab:c9:41:e4",
+          "mac": "aa:c1:ab:9a:17:8d",
           "peer": "z"
         },
         "z": {
           "node": "asbr2-1",
           "interface": "et1",
-          "mac": "aa:c1:ab:ec:82:95",
+          "mac": "aa:c1:ab:a2:7c:c6",
           "peer": "a"
         }
       }
@@ -740,13 +740,13 @@
         "a": {
           "node": "asbr1-1",
           "interface": "et2",
-          "mac": "aa:c1:ab:31:4a:31",
+          "mac": "aa:c1:ab:c9:19:0b",
           "peer": "z"
         },
         "z": {
           "node": "r1-1",
           "interface": "et1",
-          "mac": "aa:c1:ab:ae:2c:dc",
+          "mac": "aa:c1:ab:59:9e:cf",
           "peer": "a"
         }
       }
@@ -756,29 +756,13 @@
         "a": {
           "node": "asbr1-1",
           "interface": "et3",
-          "mac": "aa:c1:ab:aa:cf:ef",
+          "mac": "aa:c1:ab:32:af:10",
           "peer": "z"
         },
         "z": {
           "node": "r1-2",
           "interface": "et1",
-          "mac": "aa:c1:ab:b3:08:58",
-          "peer": "a"
-        }
-      }
-    },
-    {
-      "endpoints": {
-        "a": {
-          "node": "r1-1",
-          "interface": "et2",
-          "mac": "aa:c1:ab:c5:93:41",
-          "peer": "z"
-        },
-        "z": {
-          "node": "r1-2",
-          "interface": "et2",
-          "mac": "aa:c1:ab:cf:32:de",
+          "mac": "aa:c1:ab:f0:cc:0d",
           "peer": "a"
         }
       }
@@ -788,13 +772,13 @@
         "a": {
           "node": "r1-1",
           "interface": "et3",
-          "mac": "aa:c1:ab:f3:07:cb",
+          "mac": "aa:c1:ab:a4:58:29",
           "peer": "z"
         },
         "z": {
           "node": "sw1-1",
           "interface": "et1",
-          "mac": "aa:c1:ab:04:9a:4c",
+          "mac": "aa:c1:ab:09:e4:40",
           "peer": "a"
         }
       }
@@ -804,13 +788,13 @@
         "a": {
           "node": "r1-2",
           "interface": "et3",
-          "mac": "aa:c1:ab:be:ac:70",
+          "mac": "aa:c1:ab:00:61:bc",
           "peer": "z"
         },
         "z": {
           "node": "sw1-2",
           "interface": "et1",
-          "mac": "aa:c1:ab:f8:4a:93",
+          "mac": "aa:c1:ab:11:34:31",
           "peer": "a"
         }
       }
@@ -820,13 +804,13 @@
         "a": {
           "node": "sw1-1",
           "interface": "et2",
-          "mac": "aa:c1:ab:46:82:5b",
+          "mac": "aa:c1:ab:b3:df:fd",
           "peer": "z"
         },
         "z": {
           "node": "sw1-2",
           "interface": "et2",
-          "mac": "aa:c1:ab:2d:fe:9b",
+          "mac": "aa:c1:ab:e6:d1:fa",
           "peer": "a"
         }
       }
@@ -836,13 +820,13 @@
         "a": {
           "node": "sw1-1",
           "interface": "et3",
-          "mac": "aa:c1:ab:a5:87:7f",
+          "mac": "aa:c1:ab:91:48:8b",
           "peer": "z"
         },
         "z": {
           "node": "sw1-3",
           "interface": "et1",
-          "mac": "aa:c1:ab:d5:ac:93",
+          "mac": "aa:c1:ab:f5:86:5c",
           "peer": "a"
         }
       }
@@ -852,13 +836,13 @@
         "a": {
           "node": "sw1-2",
           "interface": "et3",
-          "mac": "aa:c1:ab:22:ba:c0",
+          "mac": "aa:c1:ab:8c:d8:03",
           "peer": "z"
         },
         "z": {
           "node": "sw1-3",
           "interface": "et2",
-          "mac": "aa:c1:ab:44:6f:8b",
+          "mac": "aa:c1:ab:86:a9:46",
           "peer": "a"
         }
       }
@@ -868,13 +852,13 @@
         "a": {
           "node": "sw1-1",
           "interface": "et4",
-          "mac": "aa:c1:ab:0f:32:c4",
+          "mac": "aa:c1:ab:4c:10:3b",
           "peer": "z"
         },
         "z": {
           "node": "host1-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:c7:c0:8a",
+          "mac": "aa:c1:ab:5f:83:6a",
           "peer": "a"
         }
       }
@@ -884,13 +868,13 @@
         "a": {
           "node": "sw1-2",
           "interface": "et4",
-          "mac": "aa:c1:ab:3e:24:bb",
+          "mac": "aa:c1:ab:9a:12:23",
           "peer": "z"
         },
         "z": {
           "node": "host1-2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:30:0b:48",
+          "mac": "aa:c1:ab:f6:16:93",
           "peer": "a"
         }
       }
@@ -900,13 +884,13 @@
         "a": {
           "node": "sw1-3",
           "interface": "et3",
-          "mac": "aa:c1:ab:b5:05:a3",
+          "mac": "aa:c1:ab:08:a0:d1",
           "peer": "z"
         },
         "z": {
           "node": "host1-3",
           "interface": "eth1",
-          "mac": "aa:c1:ab:ae:dc:18",
+          "mac": "aa:c1:ab:c8:23:2b",
           "peer": "a"
         }
       }
@@ -916,13 +900,13 @@
         "a": {
           "node": "asbr2-1",
           "interface": "et2",
-          "mac": "aa:c1:ab:8e:28:23",
+          "mac": "aa:c1:ab:e6:00:2c",
           "peer": "z"
         },
         "z": {
           "node": "r2-1",
           "interface": "et1",
-          "mac": "aa:c1:ab:8c:bc:4c",
+          "mac": "aa:c1:ab:8f:01:e0",
           "peer": "a"
         }
       }
@@ -932,29 +916,13 @@
         "a": {
           "node": "asbr2-1",
           "interface": "et3",
-          "mac": "aa:c1:ab:eb:ee:65",
+          "mac": "aa:c1:ab:df:91:85",
           "peer": "z"
         },
         "z": {
           "node": "r2-2",
           "interface": "et1",
-          "mac": "aa:c1:ab:0a:0e:3c",
-          "peer": "a"
-        }
-      }
-    },
-    {
-      "endpoints": {
-        "a": {
-          "node": "r2-1",
-          "interface": "et2",
-          "mac": "aa:c1:ab:08:d5:2e",
-          "peer": "z"
-        },
-        "z": {
-          "node": "r2-2",
-          "interface": "et2",
-          "mac": "aa:c1:ab:61:4a:ca",
+          "mac": "aa:c1:ab:da:53:a6",
           "peer": "a"
         }
       }
@@ -964,13 +932,13 @@
         "a": {
           "node": "r2-1",
           "interface": "et3",
-          "mac": "aa:c1:ab:4b:db:f0",
+          "mac": "aa:c1:ab:e5:a4:19",
           "peer": "z"
         },
         "z": {
           "node": "sw2-1",
           "interface": "et1",
-          "mac": "aa:c1:ab:c5:b4:b7",
+          "mac": "aa:c1:ab:7d:0f:af",
           "peer": "a"
         }
       }
@@ -980,13 +948,13 @@
         "a": {
           "node": "r2-2",
           "interface": "et3",
-          "mac": "aa:c1:ab:9d:c9:ad",
+          "mac": "aa:c1:ab:0e:ba:96",
           "peer": "z"
         },
         "z": {
           "node": "sw2-2",
           "interface": "et1",
-          "mac": "aa:c1:ab:c7:84:dd",
+          "mac": "aa:c1:ab:f6:88:45",
           "peer": "a"
         }
       }
@@ -996,13 +964,13 @@
         "a": {
           "node": "sw2-1",
           "interface": "et2",
-          "mac": "aa:c1:ab:ed:6c:8e",
+          "mac": "aa:c1:ab:bd:1e:40",
           "peer": "z"
         },
         "z": {
           "node": "sw2-2",
           "interface": "et2",
-          "mac": "aa:c1:ab:5d:1a:06",
+          "mac": "aa:c1:ab:21:ef:46",
           "peer": "a"
         }
       }
@@ -1012,13 +980,13 @@
         "a": {
           "node": "sw2-1",
           "interface": "et3",
-          "mac": "aa:c1:ab:f6:92:14",
+          "mac": "aa:c1:ab:e3:bc:27",
           "peer": "z"
         },
         "z": {
           "node": "sw2-3",
           "interface": "et1",
-          "mac": "aa:c1:ab:6d:43:a5",
+          "mac": "aa:c1:ab:18:8f:54",
           "peer": "a"
         }
       }
@@ -1028,13 +996,13 @@
         "a": {
           "node": "sw2-2",
           "interface": "et3",
-          "mac": "aa:c1:ab:0f:82:0f",
+          "mac": "aa:c1:ab:6e:0b:9a",
           "peer": "z"
         },
         "z": {
           "node": "sw2-3",
           "interface": "et2",
-          "mac": "aa:c1:ab:e7:31:a0",
+          "mac": "aa:c1:ab:e6:e0:dc",
           "peer": "a"
         }
       }
@@ -1044,13 +1012,13 @@
         "a": {
           "node": "sw2-1",
           "interface": "et4",
-          "mac": "aa:c1:ab:71:7f:b5",
+          "mac": "aa:c1:ab:a1:37:d5",
           "peer": "z"
         },
         "z": {
           "node": "host2-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:c2:0c:dd",
+          "mac": "aa:c1:ab:1d:e2:54",
           "peer": "a"
         }
       }
@@ -1060,13 +1028,13 @@
         "a": {
           "node": "sw2-2",
           "interface": "et4",
-          "mac": "aa:c1:ab:7e:c3:cc",
+          "mac": "aa:c1:ab:c2:65:e0",
           "peer": "z"
         },
         "z": {
           "node": "host2-2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:db:b4:37",
+          "mac": "aa:c1:ab:5e:29:f4",
           "peer": "a"
         }
       }
@@ -1076,13 +1044,13 @@
         "a": {
           "node": "sw2-3",
           "interface": "et3",
-          "mac": "aa:c1:ab:ef:40:e0",
+          "mac": "aa:c1:ab:54:3e:88",
           "peer": "z"
         },
         "z": {
           "node": "host2-3",
           "interface": "eth1",
-          "mac": "aa:c1:ab:79:d0:0e",
+          "mac": "aa:c1:ab:e1:8e:77",
           "peer": "a"
         }
       }

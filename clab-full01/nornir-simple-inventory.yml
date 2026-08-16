@@ -3,89 +3,89 @@ asbr1-1:
     username: admin
     password: admin
     platform: arista_ceos
-    hostname: 172.30.30.5
+    hostname: 172.30.30.101
 asbr2-1:
     username: admin
     password: admin
     platform: arista_ceos
-    hostname: 172.30.30.12
+    hostname: 172.30.30.110
 r1-1:
     username: admin
     password: admin
     platform: arista_ceos
-    hostname: 172.30.30.15
+    hostname: 172.30.30.102
 r1-2:
     username: admin
     password: admin
     platform: arista_ceos
-    hostname: 172.30.30.17
+    hostname: 172.30.30.103
 r2-1:
     username: admin
     password: admin
     platform: arista_ceos
-    hostname: 172.30.30.19
+    hostname: 172.30.30.111
 r2-2:
     username: admin
     password: admin
     platform: arista_ceos
-    hostname: 172.30.30.16
+    hostname: 172.30.30.112
 sw1-1:
     username: admin
     password: admin
     platform: arista_ceos
-    hostname: 172.30.30.13
+    hostname: 172.30.30.104
 sw1-2:
     username: admin
     password: admin
     platform: arista_ceos
-    hostname: 172.30.30.7
+    hostname: 172.30.30.105
 sw1-3:
     username: admin
     password: admin
     platform: arista_ceos
-    hostname: 172.30.30.8
+    hostname: 172.30.30.106
 sw2-1:
     username: admin
     password: admin
     platform: arista_ceos
-    hostname: 172.30.30.14
+    hostname: 172.30.30.113
 sw2-2:
     username: admin
     password: admin
     platform: arista_ceos
-    hostname: 172.30.30.9
+    hostname: 172.30.30.114
 sw2-3:
     username: admin
     password: admin
     platform: arista_ceos
-    hostname: 172.30.30.6
+    hostname: 172.30.30.115
 host1-1:
     username: 
     password: 
     platform: linux
-    hostname: 172.30.30.3
+    hostname: 172.30.30.107
 host1-2:
     username: 
     password: 
     platform: linux
-    hostname: 172.30.30.18
+    hostname: 172.30.30.108
 host1-3:
     username: 
     password: 
     platform: linux
-    hostname: 172.30.30.4
+    hostname: 172.30.30.109
 host2-1:
     username: 
     password: 
     platform: linux
-    hostname: 172.30.30.10
+    hostname: 172.30.30.116
 host2-2:
     username: 
     password: 
     platform: linux
-    hostname: 172.30.30.11
+    hostname: 172.30.30.117
 host2-3:
     username: 
     password: 
     platform: linux
-    hostname: 172.30.30.2
+    hostname: 172.30.30.118

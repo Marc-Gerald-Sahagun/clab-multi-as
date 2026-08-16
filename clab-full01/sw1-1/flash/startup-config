@@ -1,4 +1,4 @@
-! Startup-config last modified at Sun Aug 16 01:40:04 2026 by root
+! Startup-config last modified at Sun Aug 16 02:04:12 2026 by root
 ! device: sw1-1 (cEOSLab, EOS-4.32.0F-36401836.4320F (engineering build))
 !
 no aaa root
@@ -36,7 +36,7 @@ interface Ethernet4
    spanning-tree bpduguard enable
 !
 interface Management0
-   ip address 172.30.30.13/24
+   ip address 172.30.30.104/24
 !
 no ip routing
 !

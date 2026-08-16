@@ -1,4 +1,4 @@
-! Startup-config last modified at Sun Aug 16 01:40:03 2026 by root
+! Startup-config last modified at Sun Aug 16 02:04:10 2026 by root
 ! device: asbr1-1 (cEOSLab, EOS-4.32.0F-36401836.4320F (engineering build))
 !
 no aaa root
@@ -44,7 +44,7 @@ interface Ethernet3
    ip ospf area 0.0.0.0
 !
 interface Management0
-   ip address 172.30.30.5/24
+   ip address 172.30.30.101/24
 !
 ip routing
 !

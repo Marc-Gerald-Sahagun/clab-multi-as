@@ -16,18 +16,18 @@ all:
         interior:
           hosts:
             r1-1:
-              ansible_host: 172.30.30.7
+              ansible_host: 172.30.30.102
             r1-2:
-              ansible_host: 172.30.30.8
+              ansible_host: 172.30.30.103
         border:
           hosts:
             asbr1-1:
-              ansible_host: 172.30.30.6
+              ansible_host: 172.30.30.101
         access:
           hosts:
             sw1-1:
-              ansible_host: 172.30.30.9
+              ansible_host: 172.30.30.104
             sw1-2:
-              ansible_host: 172.30.30.4
+              ansible_host: 172.30.30.105
             sw1-3:
-              ansible_host: 172.30.30.5
+              ansible_host: 172.30.30.106

@@ -101,14 +101,23 @@ topology:
       kind: linux
       group: tier-1
       mgmt-ipv4: 172.30.30.116
+      exec:
+        - udhcpc -i eth1 -q -t 20 -A 5
+        - ip route del default via 172.30.30.1      
     host2-2:
       kind: linux
       group: tier-1
       mgmt-ipv4: 172.30.30.117
+      exec:
+        - udhcpc -i eth1 -q -t 20 -A 5
+        - ip route del default via 172.30.30.1      
     host2-3:
       kind: linux
       group: tier-1
       mgmt-ipv4: 172.30.30.118
+      exec:
+        - udhcpc -i eth1 -q -t 20 -A 5
+        - ip route del default via 172.30.30.1      
 
   links:
     # Link between the AS

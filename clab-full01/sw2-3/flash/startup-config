@@ -1,9 +1,9 @@
-! Startup-config last modified at Sun Aug 16 02:05:52 2026 by root
+! Startup-config last modified at Sun Aug 16 06:00:00 2026 by root
 ! device: sw2-3 (cEOSLab, EOS-4.32.0F-36401836.4320F (engineering build))
 !
 no aaa root
 !
-username admin privilege 15 role network-admin secret sha512 $6$03JFpMeWEf3ymd2P$LQ.DV1mZLudR8aBxP0HYnuNA18zks6DL1YZvveh76yY1YNH6nVShmR6/V6Ec7PG8OkDLMz2VwktLmLc00FrC/0
+username admin privilege 15 role network-admin secret sha512 $6$Q/Z7etn2GjMY5FEz$xRdqDJff5eraRYSnvNflRkzlms0gMM9MhEemVKtGte9.42AdJ.HW8u9HSb9s.diSTPsOYzT2lPYx/1S6x1/4G0
 !
 transceiver qsfp default-mode 4x10G
 !
@@ -17,11 +17,19 @@ system l1
    unsupported speed action error
    unsupported error-correction action error
 !
+vlan 10,20,30
+!
 interface Ethernet1
+   switchport trunk allowed vlan 10,20,30
+   switchport mode trunk
 !
 interface Ethernet2
+   switchport trunk allowed vlan 10,20,30
+   switchport mode trunk
 !
 interface Ethernet3
+   switchport access vlan 30
+   spanning-tree bpduguard enable
 !
 interface Management0
    ip address 172.30.30.115/24

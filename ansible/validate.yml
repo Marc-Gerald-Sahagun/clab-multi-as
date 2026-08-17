@@ -1,0 +1,26 @@
+# ansible/validate.yml
+- name: Validate lab health
+  hosts: network
+  gather_facts: false
+  tasks:
+    - name: Check OSPF neighbors
+      arista.eos.eos_command:
+        commands: show ip ospf neighbor
+      register: ospf_out
+
+    - name: Check BGP summary (ASBRs only)
+      arista.eos.eos_command:
+        commands: show ip bgp summary
+      register: bgp_out
+      when: "'border' in group_names"
+
+    - name: Check VRRP state
+      arista.eos.eos_command:
+        commands: show vrrp
+      register: vrrp_out
+      when: "'interior' in group_names"
+
+    - name: Print results
+      debug:
+        var: item.stdout_lines
+      loop: "{{ [ospf_out, bgp_out, vrrp_out] | select('defined') | list }}"

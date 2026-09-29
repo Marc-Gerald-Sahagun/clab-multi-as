@@ -6,7 +6,6 @@ all:
         ansible_password: admin
         ansible_network_os: arista.eos.eos
         ansible_connection: ansible.netcommon.network_cli
-        ansible_ssh_pass: admin
         ansible_ssh_common_args: '-o PreferredAuthentications=password -o PubkeyAuthentication=no'
         ansible_network_cli_ssh_type: paramiko
         ansible_become: yes
